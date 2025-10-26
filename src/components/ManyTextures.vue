@@ -3,6 +3,8 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import tex1 from './../assets/1.webp'
 import tex2 from './../assets/2.webp'
 import tex3 from './../assets/3.webp'
+import tex4 from './../assets/4.webp'
+import tex5 from './../assets/5.webp'
 
 
 
@@ -14,6 +16,9 @@ function getCountFromQuery(defaultN = 2000) {
   return Number.isFinite(n) && n > 0 ? Math.min(n, 9000000) : defaultN
 }
 
+// Define the list of texture paths to use. Edit this array to change textures.
+const texturePaths: string[] = [tex1, tex2, tex3, tex4, tex5]
+
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const fpsText = ref('')
 const statsText = ref('')
@@ -21,17 +26,10 @@ const N = getCountFromQuery()
 
 let rafId = 0
 
+
 onMounted(() => {
   const canvas = canvasRef.value!
   const ogGl = canvas.getContext('webgl2', { antialias: false, alpha: false }) as WebGL2RenderingContext | null
-  if (!ogGl) {
-    fpsText.value = 'WebGL2 not supported'
-    return
-  }
-
-  const {gl, stats} = createLoggingContext(ogGl)
-
-
 
   // Resize canvas to display size * devicePixelRatio
   function resizeCanvasToDisplaySize() {
@@ -49,6 +47,19 @@ onMounted(() => {
     }
   }
 
+  if (!ogGl) {
+    fpsText.value = 'WebGL2 not supported'
+    return
+  }
+
+  const {gl, stats} = createLoggingContext(ogGl)
+
+  // Determine how many textures to use (K) from the texturePaths array
+  const requestedT = texturePaths.length
+  const maxUnits = gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS) as number
+  const MAX_SAMPLERS = 16
+  const K = Math.max(1, Math.min(requestedT, Math.min(maxUnits, MAX_SAMPLERS)))
+
   // Shaders for instanced quads (sprite batching)
   const vsSource = `#version 300 es
   precision highp float;
@@ -57,7 +68,7 @@ onMounted(() => {
   layout(location=2) in vec2 iTranslate;           // per-instance position in pixels
   layout(location=3) in vec2 iScale;               // per-instance scale in pixels
   layout(location=4) in float iRotation;           // per-instance rotation in radians
-  layout(location=5) in float iTexId;              // per-instance texture id (0,1,2)
+  layout(location=5) in float iTexId;              // per-instance texture id (0..K-1)
 
   uniform mat4 uProjection;
 
@@ -76,26 +87,33 @@ onMounted(() => {
     vTexId = iTexId;
   }`
 
-  const fsSource = `#version 300 es
+  // Generate fragment shader with an explicit branch ladder for samplers up to K
+  const fsSource = (() => {
+    const samplerCount = 16 // keep array size at compile time
+    const cases: string[] = []
+    for (let i = 0; i < K; i++) {
+      if (i === 0) {
+        cases.push(`if (id == 0) c = texture(uTex[0], vUV);`)
+      } else {
+        cases.push(`else if (id == ${i}) c = texture(uTex[${i}], vUV);`)
+      }
+    }
+    // fallback
+    cases.push(`else c = texture(uTex[0], vUV);`)
+    return `#version 300 es
   precision highp float;
   in vec2 vUV;
   flat in float vTexId;
-  uniform sampler2D uTex0;
-  uniform sampler2D uTex1;
-  uniform sampler2D uTex2;
+  uniform sampler2D uTex[${samplerCount}];
   out vec4 outColor;
   void main() {
-    int id = int(vTexId + 0.5);
+    int id = int(vTexId);
+    id = clamp(id, 0, ${Math.max(0, K - 1)});
     vec4 c;
-    if (id == 0) {
-      c = texture(uTex0, vUV);
-    } else if (id == 1) {
-      c = texture(uTex1, vUV);
-    } else {
-      c = texture(uTex2, vUV);
-    }
+    ${cases.join('\n    ')}
     outColor = c;
   }`
+  })()
 
   function compileShader(type: number, source: string) {
     const sh = gl.createShader(type)!
@@ -130,13 +148,11 @@ onMounted(() => {
 
   // Look up uniforms
   const uProjection = gl.getUniformLocation(program, 'uProjection')!
-  const uTex0 = gl.getUniformLocation(program, 'uTex0')!
-  const uTex1u = gl.getUniformLocation(program, 'uTex1')!
-  const uTex2u = gl.getUniformLocation(program, 'uTex2')!
-  // Bind sampler uniforms to texture units 0,1,2
-  gl.uniform1i(uTex0, 0)
-  gl.uniform1i(uTex1u, 1)
-  gl.uniform1i(uTex2u, 2)
+  // Setup sampler array uTex[0..K-1] to texture units 0..K-1
+  const uTex0Loc = gl.getUniformLocation(program, 'uTex[0]')!
+  const units = new Int32Array(K)
+  for (let i = 0; i < K; i++) units[i] = i
+  gl.uniform1iv(uTex0Loc, units)
 
   // Base quad geometry (unit square centered at origin, size 1) -> but we will scale in pixels
   // We'll define quad from -0.5..0.5 in both axes
@@ -194,14 +210,13 @@ onMounted(() => {
 
   gl.bindVertexArray(null)
 
-  // Load three textures: tex1, tex2, tex3
-  const texture0 = gl.createTexture()!
-  const texture1 = gl.createTexture()!
-  const texture2 = gl.createTexture()!
+  // Load K textures using user-provided texturePaths
+  const urls: string[] = texturePaths.slice(0, K)
+  const textures: WebGLTexture[] = new Array(K)
   let loadedCount = 0
   function onLoaded() {
     loadedCount++
-    if (loadedCount === 3) texReady = true
+    if (loadedCount === K) texReady = true
   }
   function loadInto(tex: WebGLTexture, url: string) {
     const img = new Image()
@@ -219,9 +234,11 @@ onMounted(() => {
       onLoaded()
     }
   }
-  loadInto(texture0, tex1)
-  loadInto(texture1, tex2)
-  loadInto(texture2, tex3)
+  for (let i = 0; i < K; i++) {
+    const tex = gl.createTexture()!
+    textures[i] = tex
+    loadInto(tex, urls[i])
+  }
 
   // Sprite state arrays for animation
   const pos = new Float32Array(N * 2)
@@ -247,9 +264,9 @@ onMounted(() => {
       scale[i*2+1] = s / ar
       rot[i] = rand(0, Math.PI * 2)
       rotSpeed[i] = rand(-2.0, 2.0)
-      // Pack initial tex id as random 0..2
+      // Pack initial tex id as random 0..K-1
       const base = i * 6
-      instanceData[base+5] = Math.floor(Math.random() * 3)
+      instanceData[base+5] = Math.floor(Math.random() * K)
     }
     // upload initial instance buffer
     updateInstanceBuffer()
@@ -323,13 +340,11 @@ onMounted(() => {
     // Draw
     gl.clear(gl.COLOR_BUFFER_BIT)
     gl.useProgram(program)
-    // Bind three textures to units 0,1,2
-    gl.activeTexture(gl.TEXTURE0)
-    gl.bindTexture(gl.TEXTURE_2D, texture0)
-    gl.activeTexture(gl.TEXTURE1)
-    gl.bindTexture(gl.TEXTURE_2D, texture1)
-    gl.activeTexture(gl.TEXTURE2)
-    gl.bindTexture(gl.TEXTURE_2D, texture2)
+    // Bind K textures to units 0..K-1
+    for (let i = 0; i < K; i++) {
+      gl.activeTexture(gl.TEXTURE0 + i)
+      gl.bindTexture(gl.TEXTURE_2D, textures[i])
+    }
 
     gl.bindVertexArray(vao)
 
@@ -346,7 +361,7 @@ onMounted(() => {
       frames = 0
       acc = 0
       fpsText.value = `${lastFps} FPS`
-      statsText.value = `${N} sprites | ${stats.drawCalls} draw call`
+      statsText.value = `${N} sprites | ${K} textures | ${stats.drawCalls} draw call`
       // console.table(stats)
     }
   }
@@ -369,9 +384,9 @@ onMounted(() => {
     gl.deleteBuffer(ebo)
     gl.deleteVertexArray(vao)
     gl.deleteProgram(program)
-    gl.deleteTexture(texture0)
-    gl.deleteTexture(texture1)
-    gl.deleteTexture(texture2)
+    for (let i = 0; i < textures.length; i++) {
+      gl.deleteTexture(textures[i])
+    }
   })
 })
 
