@@ -37,8 +37,20 @@ onMounted(() => {
     const width = Math.floor(canvas.clientWidth * dpr)
     const height = Math.floor(canvas.clientHeight * dpr)
     if (canvas.width !== width || canvas.height !== height) {
+      const oldW = Math.max(1, canvas.width || 1)
+      const oldH = Math.max(1, canvas.height || 1)
       canvas.width = width
       canvas.height = height
+      // Scale sprite positions proportionally to keep them in view after resize
+      if (spritesInitialized) {
+        const sx = width / oldW
+        const sy = height / oldH
+        for (let i = 0; i < N; i++) {
+          pos[i*2+0] *= sx
+          pos[i*2+1] *= sy
+        }
+        updateInstanceBuffer()
+      }
       gl.viewport(0, 0, width, height)
       // Update projection
       const proj = makeOrtho(0, width, height, 0, -1, 1)
@@ -250,6 +262,7 @@ onMounted(() => {
 
   // Initialize after we know canvas size
   let texReady = false
+  let spritesInitialized = false
   function initSprites() {
     const w = canvas.width
     const h = canvas.height
@@ -270,6 +283,7 @@ onMounted(() => {
     }
     // upload initial instance buffer
     updateInstanceBuffer()
+    spritesInitialized = true
   }
 
   function updateInstanceBuffer() {
