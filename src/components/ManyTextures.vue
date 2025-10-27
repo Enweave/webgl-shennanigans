@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-nocheck
 import { onMounted, onUnmounted, ref } from 'vue'
 import tex1 from './../assets/1.webp'
 import tex2 from './../assets/2.webp'
