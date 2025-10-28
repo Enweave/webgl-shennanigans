@@ -146,7 +146,7 @@ function loadImage(url: string) { return new Promise<HTMLImageElement>((resolve,
 async function setupSpriteSheet() {
   const data = await loadJSON(jsonUrl)
   // Pick four walk frames
-  const keys = Object.keys(data).filter(e=>e.includes("./assets/yutami/enemies/goblinpickaxerunning_56x32px_12fps/"));
+  const keys = Object.keys(data).filter(e=>e.includes("./assets/sprite_1"));
 
 
   spriteSheetOne = []

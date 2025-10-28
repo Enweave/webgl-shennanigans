@@ -1,0 +1,992 @@
+{
+  "./assets/sprite_2_2.png": {
+    "x": 0,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_10.png": {
+    "x": 64,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_4.png": {
+    "x": 0,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_0.png": {
+    "x": 64,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_8.png": {
+    "x": 128,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_3.png": {
+    "x": 128,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_3.png": {
+    "x": 0,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_10.png": {
+    "x": 64,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_3.png": {
+    "x": 128,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_10.png": {
+    "x": 192,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_5.png": {
+    "x": 192,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_0.png": {
+    "x": 192,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_9.png": {
+    "x": 0,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_4.png": {
+    "x": 64,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_5.png": {
+    "x": 128,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_6.png": {
+    "x": 192,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_1.png": {
+    "x": 256,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_8.png": {
+    "x": 256,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_3.png": {
+    "x": 256,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_2_4.png": {
+    "x": 256,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_1.png": {
+    "x": 0,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_1.png": {
+    "x": 64,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_6.png": {
+    "x": 128,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_2_7.png": {
+    "x": 192,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_6.png": {
+    "x": 256,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_1.png": {
+    "x": 320,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_4.png": {
+    "x": 320,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_8.png": {
+    "x": 320,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_8.png": {
+    "x": 320,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_7.png": {
+    "x": 320,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_2_5.png": {
+    "x": 0,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_10.png": {
+    "x": 64,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_6.png": {
+    "x": 128,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_8.png": {
+    "x": 192,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_8.png": {
+    "x": 256,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_4.png": {
+    "x": 320,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_3.png": {
+    "x": 384,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_1.png": {
+    "x": 384,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_2.png": {
+    "x": 384,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_2_3.png": {
+    "x": 384,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_2.png": {
+    "x": 384,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_2.png": {
+    "x": 384,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_2_6.png": {
+    "x": 0,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_9.png": {
+    "x": 64,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_1.png": {
+    "x": 128,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_5.png": {
+    "x": 192,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_2.png": {
+    "x": 256,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_2_1.png": {
+    "x": 320,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_7.png": {
+    "x": 384,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_1.png": {
+    "x": 448,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_0.png": {
+    "x": 448,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_8.png": {
+    "x": 448,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_5.png": {
+    "x": 448,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_0.png": {
+    "x": 448,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_4.png": {
+    "x": 448,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_4.png": {
+    "x": 448,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_9.png": {
+    "x": 0,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_2_0.png": {
+    "x": 64,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_0.png": {
+    "x": 128,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_9.png": {
+    "x": 192,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_10.png": {
+    "x": 256,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_0.png": {
+    "x": 320,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_2.png": {
+    "x": 384,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_9.png": {
+    "x": 448,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_7.png": {
+    "x": 512,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_5.png": {
+    "x": 512,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_1.png": {
+    "x": 512,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_5.png": {
+    "x": 512,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_10.png": {
+    "x": 512,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_9.png": {
+    "x": 512,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_7.png": {
+    "x": 512,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_4.png": {
+    "x": 512,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_5.png": {
+    "x": 0,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_10.png": {
+    "x": 64,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_1.png": {
+    "x": 128,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_9.png": {
+    "x": 192,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_0.png": {
+    "x": 256,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_6.png": {
+    "x": 320,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_10.png": {
+    "x": 384,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_5.png": {
+    "x": 448,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_2.png": {
+    "x": 512,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_8.png": {
+    "x": 576,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_6.png": {
+    "x": 576,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_1.png": {
+    "x": 576,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_4.png": {
+    "x": 576,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_2.png": {
+    "x": 576,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_9.png": {
+    "x": 576,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_7.png": {
+    "x": 576,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_10.png": {
+    "x": 576,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_7.png": {
+    "x": 576,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_3.png": {
+    "x": 0,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_8.png": {
+    "x": 64,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_7.png": {
+    "x": 128,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_4.png": {
+    "x": 192,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_2.png": {
+    "x": 256,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_3.png": {
+    "x": 320,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_6.png": {
+    "x": 384,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_5.png": {
+    "x": 448,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_10.png": {
+    "x": 512,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_8.png": {
+    "x": 576,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_9.png": {
+    "x": 640,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_3.png": {
+    "x": 640,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_9.png": {
+    "x": 640,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_7.png": {
+    "x": 640,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_6.png": {
+    "x": 640,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_5.png": {
+    "x": 640,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_1.png": {
+    "x": 640,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_7.png": {
+    "x": 640,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_2.png": {
+    "x": 640,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_2_9.png": {
+    "x": 640,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_2_10.png": {
+    "x": 0,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_7.png": {
+    "x": 64,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_4.png": {
+    "x": 128,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_3.png": {
+    "x": 192,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_5.png": {
+    "x": 256,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_7.png": {
+    "x": 320,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_4.png": {
+    "x": 384,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_8.png": {
+    "x": 448,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_9.png": {
+    "x": 512,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_2.png": {
+    "x": 576,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_0.png": {
+    "x": 640,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_10.png": {
+    "x": 704,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_4.png": {
+    "x": 704,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_0_4.png": {
+    "x": 704,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_0.png": {
+    "x": 704,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_2.png": {
+    "x": 704,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_5.png": {
+    "x": 704,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_8_0.png": {
+    "x": 704,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_9.png": {
+    "x": 704,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_6.png": {
+    "x": 704,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_3.png": {
+    "x": 704,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_6.png": {
+    "x": 704,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_6.png": {
+    "x": 0,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_10.png": {
+    "x": 64,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_9.png": {
+    "x": 128,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_2.png": {
+    "x": 192,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_3.png": {
+    "x": 256,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_0.png": {
+    "x": 320,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_7.png": {
+    "x": 384,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_9_3.png": {
+    "x": 448,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_10.png": {
+    "x": 512,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_8.png": {
+    "x": 576,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_6.png": {
+    "x": 640,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_8.png": {
+    "x": 704,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_3.png": {
+    "x": 768,
+    "y": 0,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_2_8.png": {
+    "x": 768,
+    "y": 64,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_7.png": {
+    "x": 768,
+    "y": 128,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_14_1.png": {
+    "x": 768,
+    "y": 192,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_11_0.png": {
+    "x": 768,
+    "y": 256,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_8.png": {
+    "x": 768,
+    "y": 320,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_4.png": {
+    "x": 768,
+    "y": 384,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_7.png": {
+    "x": 768,
+    "y": 448,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_5.png": {
+    "x": 768,
+    "y": 512,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_1.png": {
+    "x": 768,
+    "y": 576,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_1.png": {
+    "x": 768,
+    "y": 640,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_10_2.png": {
+    "x": 768,
+    "y": 704,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_6_9.png": {
+    "x": 0,
+    "y": 768,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_6.png": {
+    "x": 64,
+    "y": 768,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_12_0.png": {
+    "x": 128,
+    "y": 768,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_7_10.png": {
+    "x": 192,
+    "y": 768,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_3_2.png": {
+    "x": 256,
+    "y": 768,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_13_5.png": {
+    "x": 320,
+    "y": 768,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_1_0.png": {
+    "x": 384,
+    "y": 768,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_5_6.png": {
+    "x": 448,
+    "y": 768,
+    "width": 64,
+    "height": 64
+  },
+  "./assets/sprite_4_3.png": {
+    "x": 512,
+    "y": 768,
+    "width": 64,
+    "height": 64
+  }
+}
